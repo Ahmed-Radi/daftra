@@ -11,6 +11,7 @@ interface initValue {
   handleVisibility: (id: number) => void;
   newTitle: string;
   setNewTitle: React.Dispatch<React.SetStateAction<string>>;
+  isPending: boolean;
 }
 
 const SidebarContext = createContext<initValue | undefined>(undefined);
@@ -27,7 +28,6 @@ const SidebarItemProvider = ({ children }: { children: ReactNode }) => {
       setNavItems(items);
     } catch (error) {
       console.error('Failed to fetch nav items:', error);
-      // setError('Failed to fetch navigation items');
     }
   }, []);
 
@@ -135,6 +135,7 @@ const SidebarItemProvider = ({ children }: { children: ReactNode }) => {
     handleVisibility,
     newTitle,
     setNewTitle,
+    isPending,
   };
 
   return <SidebarContext.Provider value={value}>{children}</SidebarContext.Provider>;

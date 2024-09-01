@@ -5,7 +5,8 @@ import { revalidatePath } from "next/cache";
 
 export async function getNavItems() {
   try {
-    const response = await fetch("http://localhost:8081/nav");
+    // const response = await fetch("http://localhost:8081/nav");
+    const response = await fetch("https://ahmed-radi-daftra.koyeb.app/nav");
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -26,7 +27,8 @@ export async function getNavItems() {
 }
 
 export async function postTrackItem({ id, from, to }: { id: number, from: number, to: number }) {
-  const response = await fetch("http://localhost:8081/track", {
+  // const response = await fetch("http://localhost:8081/track", {
+    const response = await fetch("https://ahmed-radi-daftra.koyeb.app/track", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -43,7 +45,8 @@ export async function postTrackItem({ id, from, to }: { id: number, from: number
 
 export const postSidebarItems = async (items: ISidebarItem[]) => {
   try {
-    const response = await fetch('http://localhost:8081/nav', {
+    // const response = await fetch('http://localhost:8081/nav', {
+    const response = await fetch('https://ahmed-radi-daftra.koyeb.app/nav', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

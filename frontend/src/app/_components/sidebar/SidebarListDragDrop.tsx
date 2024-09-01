@@ -23,12 +23,12 @@ const SidebarListDragDrop = ({
   openSidebar,
   handleOpenSidebarSubList,
 }: SidebarListDragDropProps) => {
-  const { editingItemId, handleEdit, handleSaveEdit, newTitle, setNewTitle, handleVisibility } =
+  const { editingItemId, handleEdit, handleSaveEdit, newTitle, setNewTitle, handleVisibility, isPending } =
     useSidebarItemContext();
 
   return (
     <>
-      {navItems.map((item: ISidebarItem, index: number) => (
+      {!isPending ? navItems.map((item: ISidebarItem, index: number) => (
         <Fragment key={item.id}>
           <SidebarItemDragDrop
             item={item}
@@ -67,7 +67,7 @@ const SidebarListDragDrop = ({
             </Providers>
           </div>
         </Fragment>
-      ))}
+      )) : "Loading..."}
     </>
   );
 };
