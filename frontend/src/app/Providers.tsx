@@ -4,7 +4,7 @@ import React from 'react'
 import { closestCorners, DndContext, useSensor, useSensors, MouseSensor, TouchSensor, KeyboardSensor } from '@dnd-kit/core';
 import { postTrackItem, postSidebarItems } from '@/lib/actions';
 import { ISidebarItem } from '@/types';
-import { SidebarItemProvider } from './store/SidebarItemContext';
+import { SidebarItemProvider } from '@/store/SidebarItemContext';
 
 type ProvidersProps = {
   children: React.ReactNode;

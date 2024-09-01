@@ -3,8 +3,8 @@
 import { SidebarItemDragDropProps } from "@/types";
 import { memo } from "react";
 import ItemProvider from "./ItemProvider";
-import { useSidebarItemContext } from "@/app/store/SidebarItemContext";
 import UpdatedItem from "./UpdatedItem";
+import { useSidebarItemContext } from "@/store/SidebarItemContext";
 
 const SidebarItemDragDrop = ({
   item,

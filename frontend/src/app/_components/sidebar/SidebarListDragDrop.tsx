@@ -9,8 +9,8 @@ import {
 import { Fragment } from "react";
 import ItemProvider from "./ItemProvider";
 import SidebarItemDragDrop from "./SidebarItemDragDrop";
-import { useSidebarItemContext } from "@/app/store/SidebarItemContext";
 import UpdatedItem from "./UpdatedItem";
+import { useSidebarItemContext } from "@/store/SidebarItemContext";
 
 type SidebarListDragDropProps = {
   navItems: ISidebarItem[];
